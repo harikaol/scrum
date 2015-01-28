@@ -1,0 +1,40 @@
+%h1
+  Employees
+.pull-right
+  = link_to "new",new_employee_path, :class => 'btn btn-primary'
+
+%table.table.table-condensed.table-hovered.table-striped.table-bordered
+
+  %thead
+    %tr
+      %th id
+      %th Name
+      %th Phone no
+      %th Date of Joining
+      %th Designation
+      %th Date of Birth
+      %th Email Id
+      %th Qualification
+      %th Image
+      %th Show
+      %th Edit
+      %th Destroy
+      %th Terminate
+
+    %tbody
+      - @employees.each do|employee|
+        %tr
+          %td= employee.id
+          %td= employee.name
+          %td= employee.phone_no
+          %td= employee.date_of_joining
+          %td= employee.designation
+          %td= employee.date_of_birth
+          %td= employee.email_id
+          %td= employee.qualification
+          %td= image_tag employee.avatar, :size => '100', :class => 'img-circle'
+
+          %td= link_to "show",employee_path(employee), :class => 'btn btn-success'
+          %td= link_to "edit", edit_employee_path(employee), :class => 'btn btn-info'
+          %td= link_to "Destroy", employee_path(employee),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
+          %td=link_to "terminate",terminate_employee_path(employee), :class => 'btn btn-primary'

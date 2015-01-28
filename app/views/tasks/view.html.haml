@@ -1,0 +1,58 @@
+=form_for(@task) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_id
+    .col-sm-3
+      =f.text_field :project_id,:readonly => true
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :subproject_id
+    .col-sm-3
+      =f.text_field :subproject_id,:readonly => true
+    .col-sm-3
+      =f.label :subproject_name
+    .col-sm-3
+      =f.text_field :subproject_name,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :id
+    .col-sm-3
+      =f.text_field :id
+    .col-sm-3
+      =f.label :status
+    .col-sm-3
+      =f.text_field :status
+  .col-sm-12
+    .col-sm-3
+      =f.label :task_name
+    .col-sm-3
+      =f.text_field :task_name
+    .col-sm-3
+      =f.label :owner
+    .col-sm-3
+      =f.text_field :owner
+  .col-sm-12
+    .col-sm-3
+      =f.label :start_date
+    .col-sm-3
+      =f.text_field :start_date
+    .col-sm-3
+      =f.label :end_date
+    .col-sm-3
+      =f.text_field :end_date
+  .col-sm-12
+    .col-sm-3
+      =f.label :actual_start_date
+    .col-sm-3
+      =f.text_field :actual_start_date
+    .col-sm-3
+      =f.label :expected_end_date
+    .col-sm-3
+      =f.text_field :expected_end_date
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'done'

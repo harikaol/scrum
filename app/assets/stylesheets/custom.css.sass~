@@ -1,0 +1,9 @@
+.footer
+  margin-top: 38%
+  background-color: black
+  /* position:relative
+  border: 1px solid black
+.navbar-header
+  background-color: black
+.container-fluid
+  background-color: black

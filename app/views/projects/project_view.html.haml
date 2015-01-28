@@ -1,0 +1,57 @@
+%h4
+  Project
+.col-sm-12
+  .col-sm-1
+    Id
+  .col-sm-1
+    client
+  .col-sm-2
+    description
+  .col-sm-2
+    complexity
+  .col-sm-2
+    priority
+  .col-sm-2
+    date received
+  .col-sm-1
+    category
+  .col-sm-1
+    volume
+.col-sm-12
+  .col-sm-3
+    primary owner
+  .col-sm-3
+    constraints
+  .col-sm-3
+    date of starting
+  .col-sm-3
+    expected date of completion
+
+.col-sm-12
+  .col-sm-1
+    = @project.id
+  .col-sm-1
+    = @project.project_name
+  .col-sm-2
+    = @project.client
+  .col-sm-2
+    = @project.description
+  .col-sm-2
+    = @project.complexity
+  .col-sm-2
+    = @project.priority
+  .col-sm-1
+    = @project.date_received
+  .col-sm-1
+    = @project.category
+.col-sm-12
+  .col-sm-2
+    = @project.volume
+  .col-sm-2
+    = @project.primary_owner
+  .col-sm-2
+    = @project.constraints
+  .col-sm-2
+    =@project.date_of_starting
+  .col-sm-2
+    =@project.expected_date_of_completion

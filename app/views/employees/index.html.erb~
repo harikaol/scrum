@@ -1,0 +1,42 @@
+<h1> add new employee </h1>
+<%= link_to "new",new_employee_path %>
+
+<table>
+
+<thead>
+<tr>
+<th> name </th><br>
+<th> phone_no </th><br>
+<th>date_of_joining</th><br>
+<th> designation</th><br>
+<th> date_of_birth</th><br>
+<th>email_id</th><br>
+<th> qualification</th><br>
+</tr>
+</thead>
+<tbody>
+
+<%@employees.each do|employee| %>
+<tr>
+<td><%= employee.name %></td>
+<td><%= employee.phone_no %></td>
+<td><%= employee.date_of_joining %></td>
+<td><%= employee.designation %></td>
+<td><%= employee.date_of_birth %></td>
+<td><%= employee.email_id %></td>
+<td><%= employee.qualification %></td>
+
+<td><%= link_to "show",employee %></td>
+<td><%= link_to "edit", edit_employee_path(employee) %></td>
+<td><%= link_to "Destroy", employee_path(employee), :data => {:method => "DELETE", } data: { CONFIRM => "are you sure you want to delete" }%></td>
+<td><%= link_to "Destroy", employee_path(employee),method: :delete,data: { confirm: 'Are you sure you want to delete?' } %></td>
+
+
+               data: { confirm: 'Are you sure you want to delete?' } %>
+
+</tr>
+<% end %>
+
+
+</tbody>
+</table>

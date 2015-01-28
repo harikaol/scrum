@@ -1,0 +1,47 @@
+=form_for(@subproject) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_id
+    .col-sm-3
+      =f.text_field :project_id
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name
+  .col-sm-12
+    .col-sm-3
+      =f.label :sub_project_id
+    .col-sm-3
+      =f.text_field :sub_project_id
+  .col-sm-12
+    .col-sm-3
+      =f.label :sub_project_name
+    .col-sm-3
+      =f.text_field :sub_project_name
+    .col-sm-3
+      =f.label :sub_project_description
+    .col-sm-3
+      =f.text_field :sub_project_description
+  .col-sm-12
+    .col-sm-3
+      =f.label :dependencies/constraints
+    .col-sm-3
+      =f.text_field :dependencies/constraints
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      =f.text_field :primary_owner
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting
+    .col-sm-3
+      =f.label :expected_date_of_completion
+    .col-sm-3
+      =f.text_field :expected_date_of_completion
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'add_tasks'
+      =f.submit 'done'
+      =f.submit 'cancel'

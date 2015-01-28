@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  employee_id: 1
+  project_name: MyString
+  subproject_id: 1
+  subproject_name: MyString
+  subproject_description: MyString
+  constraints: MyString
+  primary_owner: MyString
+  date_of_starting: 1
+  expected_date_of_completion: 1
+  number_of_tasks: 1
+  number_of_tasks_completed: 1
+  number_of_tasks_in_progress: 1
+  tasks_scrapped: 1
+
+two:
+  project_id: 1
+  employee_id: 1
+  project_name: MyString
+  subproject_id: 1
+  subproject_name: MyString
+  subproject_description: MyString
+  constraints: MyString
+  primary_owner: MyString
+  date_of_starting: 1
+  expected_date_of_completion: 1
+  number_of_tasks: 1
+  number_of_tasks_completed: 1
+  number_of_tasks_in_progress: 1
+  tasks_scrapped: 1

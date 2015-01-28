@@ -1,0 +1,104 @@
+=form_for(@project) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :id
+    .col-sm-3
+      =f.text_field :id,:readonly => true
+    .col-sm-3
+      =f.label :status
+    .col-sm-3
+      =f.text_field:status,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name
+    .col-sm-3
+      =f.label :client
+    .col-sm-3
+      =f.text_field :client
+  .col-sm-12
+    .col-sm-3
+      =f.label :description
+    .col-sm-3
+      =f.text_field :description
+  .col-sm-12
+    .col-sm-3
+      =f.label :complexity
+    .col-sm-3
+      = f.select :complexity, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+    .col-sm-3
+      =f.label :priority
+    .col-sm-3
+      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_received
+    .col-sm-3
+      =f.text_field :date_received,:readonly => true
+    .col-sm-3
+      =f.label :category
+    .col-sm-3
+      = f.select :category, options_for_select([['a'],['termination'],['absconding']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :volume
+    .col-sm-3
+      = f.select :volume, options_for_select([['very small'],['small'],['medium'],['high'],['very high']]),{:include_blank => 'Select'}
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      = f.select :primary_owner, options_for_select([['a'],['b'],['c']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :constraints
+    .col-sm-3
+      =f.text_field :constraints
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting,:readonly => true
+    .col-sm-3
+      =f.label :expected_date_of_completion
+    .col-sm-3
+      =f.text_field :expected_date_of_completion
+  .col-sm-12
+    .col-sm-3
+      =f.label :number_of_subprojects
+    .col-sm-3
+      =f.text_field :number_of_subprojects,:readonly => true
+    .col-sm-3
+      =f.label :subprojects_completed
+    .col-sm-3
+      =f.text_field :subprojects_completed,:readonly => true
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+    .col-sm-3
+      =f.label :subprojects_in_progress
+    .col-sm-3
+      =f.text_field :subprojects_in_progress,:readonly => true
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+    .col-sm-3
+      =f.label :subprojects_scrapped
+    .col-sm-3
+      =f.text_field :subprojects_scrapped,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =link_to "show_all_subprojects", subprojects_path
+  .col-sm-12
+    .col-sm-2
+      =f.submit 'add_sub_projects'
+    .col-sm-2
+      =f.submit 'save'
+    .col-sm-2
+      =f.submit 'cancel'
+    .col-sm-2
+      =f.submit 'close'
+    .col-sm-2
+      =f.submit 'abondoned'
+    .col-sm-2
+      =f.submit 'suspend'

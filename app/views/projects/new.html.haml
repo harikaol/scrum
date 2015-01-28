@@ -1,0 +1,66 @@
+=form_for(@project) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :id
+    .col-sm-3
+      =f.text_field :id
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name
+    .col-sm-3
+      =f.label :client
+    .col-sm-3
+      =f.text_field :client
+  .col-sm-12
+    .col-sm-3
+      =f.label :description
+    .col-sm-3
+      =f.text_field :description
+  .col-sm-12
+    .col-sm-3
+      =f.label :complexity
+    .col-sm-3
+      = f.select :complexity, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+    .col-sm-3
+      =f.label :priority
+    .col-sm-3
+      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_received
+    .col-sm-3
+      =f.text_field :date_received
+    .col-sm-3
+      =f.label :category
+    .col-sm-3
+      = f.select :category, options_for_select([['a'],['termination'],['absconding']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :volume
+    .col-sm-3
+      = f.select :volume, options_for_select([['very small'],['small'],['medium'],['high'],['very high']]),{:include_blank => 'Select'}
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      = f.select :primary_owner, options_for_select([['a'],['b'],['c']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :constraints
+    .col-sm-3
+      =f.text_field :constraints
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting
+    .col-sm-3
+      =f.label :expected_date_of_completion
+    .col-sm-3
+      =f.text_field :expected_date_of_completion
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'save'
+      =f.submit 'cancel'
+      =f.submit 'add_sub_projects'

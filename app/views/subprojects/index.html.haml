@@ -1,0 +1,30 @@
+%h1
+  subprojects
+  .pull-right
+    = link_to "new",new_subproject_path, :class => 'btn btn-primary'
+  .row
+    .col-sm-12
+    %table.table.table-condensed.table-hovered.table-striped.table-bordered
+      %thead
+        %tr
+          %th project id
+          %th project Name
+          %th subproject id
+          %th subproject description
+          %th primary owner
+          %th status
+          %th view
+          %th Show
+          %th Edit
+      %tbody
+        - @subprojects.each do|subproject|
+          %tr
+            %td= subproject.project_id
+            %td= subproject.project_name
+            %td= subproject. subproject_id
+            %td= subproject.subproject_description
+            %td= subproject.primary_owner
+            %td= subproject.status
+            %td= link_to "view",view_subproject_path(subproject),:class => 'btn btn-primary'
+            %td= link_to "show",subproject_path(subproject),:class => 'btn btn-success'
+            %td= link_to "edit",edit_subproject_path(subproject),:class => 'btn btn-info'

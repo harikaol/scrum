@@ -1,0 +1,10 @@
+show page
+<%= employee.name %>
+<%= employee.phone_no %>
+<%= employee.date_of_joining %>
+<%= employee.designation %>
+<%= employee.date_of_birth %>
+<%= employee.email_id %>
+<%= employee.qualification %>
+
+

@@ -1,0 +1,47 @@
+=form_for [@project, @subproject], :html => {:class => "form-horizontal", :role => "form"} do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_id
+    .col-sm-3
+      =f.text_field :project_id
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name
+  .col-sm-12
+    .col-sm-3
+      =f.label :subproject_id
+    .col-sm-3
+      =f.text_field :subproject_id
+  .col-sm-12
+    .col-sm-3
+      =f.label :subproject_name
+    .col-sm-3
+      =f.text_field :subproject_name
+    .col-sm-3
+      =f.label :subproject_description
+    .col-sm-3
+      =f.text_field :subproject_description
+  .col-sm-12
+    .col-sm-3
+      =f.label :constraints
+    .col-sm-3
+      =f.text_field :constraints
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      = f.select :primary_owner, options_for_select([['a'],['b'],['c']]),{:include_blank => 'Select'}
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting
+    .col-sm-3
+      =f.label :expected_date_of_completion
+    .col-sm-3
+      =f.text_field :expected_date_of_completion
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'add_tasks'
+      =f.submit 'done'
+      =f.submit 'cancel'

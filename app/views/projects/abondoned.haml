@@ -1,0 +1,20 @@
+=form_for(@project)do|f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :reason_for_abondoned
+    .col-sm-3
+      = f.select(:reason_for_abondoned, options_for_select([['no longer'],['client induced'],['opening another project']]),{:include_blank => 'Select'})
+  .col-sm-12
+    .col-sm-3
+      =f.label :closing_comments
+    .col-sm-3
+      %textarea{:name => "text"}
+  .col-sm-12
+    .col-sm-3
+      =f.label :closing_date
+    .col-sm-3
+      =f.text_field :closing_date
+  .col-sm-12
+    .col-sm-3
+      = f.hidden_field :status, :value => 'abondoned'
+      = f.submit 'abondoned'

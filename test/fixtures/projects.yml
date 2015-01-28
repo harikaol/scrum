@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  description: MyText
+  complexity: MyString
+  date_received: MyString
+  volume: MyString
+  constraints: MyText
+  date_of_starting: MyString
+  expected_date_of_completion: MyString
+  client: MyString
+  priority: MyString
+  category: MyString
+  primary_owner: MyString
+
+two:
+  project_name: MyString
+  description: MyText
+  complexity: MyString
+  date_received: MyString
+  volume: MyString
+  constraints: MyText
+  date_of_starting: MyString
+  expected_date_of_completion: MyString
+  client: MyString
+  priority: MyString
+  category: MyString
+  primary_owner: MyString

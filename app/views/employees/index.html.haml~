@@ -1,0 +1,31 @@
+%h1 add new employee 
+= link_to "new",new_employee_path 
+
+%table
+
+%thead
+%tr
+%th name 
+%th phone_no 
+%th date_of_joining
+%th designation
+%th date_of_birth
+%th email_id
+%th qualification
+
+
+%tbody
+- @employees.each do|employee| 
+%tr
+%td= employee.name 
+%td= employee.phone_no 
+%td= employee.date_of_joining 
+%td= employee.designation
+%td= employee.date_of_birth 
+%td= employee.email_id 
+%td= employee.qualification 
+%td= link_to "show",employee_path(employee) 
+%td= link_to "edit", edit_employee_path(employee)
+		%td= link_to "Destroy", employee_path(employee),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
+
+

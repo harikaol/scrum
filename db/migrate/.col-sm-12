@@ -1,0 +1,8 @@
+    .col-sm-3
+          =f.label :suspended_date
+              .col-sm-3
+                    =f.text_field :suspend_date
+                        .col-sm-3
+                              =f.label :suspended_date
+                                  .col-sm-3
+                                        =f.text_field :suspend_date

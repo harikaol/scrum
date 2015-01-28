@@ -1,0 +1,4 @@
+class PassFieldsToProjects < ActiveRecord::Migration
+  def change
+  end
+end

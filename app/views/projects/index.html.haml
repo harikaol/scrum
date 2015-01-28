@@ -1,0 +1,55 @@
+%h1
+  projects
+.pull-right
+  = link_to "new",new_project_path, :class => 'btn btn-primary'
+
+  %table.table.table-condensed.table-hovered.table-striped.table-bordered
+%br
+.dropdown
+  %button#menu1.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+    status
+    %span.caret
+  %ul.dropdown-menu{"aria-labelledby" => "menu1", :role => "menu"}
+    %li{:role => "presentation"}
+      %a{:href => "#", :role => "menuitem", :tabindex => "-1"} all
+    %li{:role => "presentation"}
+      %a{:href => "#", :role => "menuitem", :tabindex => "-1"} open
+    %li{:role => "presentation"}
+      %a{:href => "#", :role => "menuitem", :tabindex => "-1"} close
+    %li.divider{:role => "presentation"}
+    %li{:role => "presentation"}
+      %a{:href => "#", :role => "menuitem", :tabindex => "-1"} abondonded
+.row
+  .col-sm-12
+    %table.table.table-condensed.table-hovered.table-striped.table-bordered
+      %thead
+        %tr
+          %th Project Name
+          %th date of starting
+          %th expected date of completion
+          %th completion status
+          %th status
+          -# %th number of sub project
+          %th show
+          %th edit
+          %th destroy
+          %th close
+          %th view
+          %th suspend
+          %th abondoned
+          %tbody
+            - @projects.each do|project|
+              %tr
+                %td= project.project_name
+                %td= project.date_of_starting
+                %td= project.expected_date_of_completion
+                %td= project.completion_status
+                %td= project.status
+                %td= link_to "show",project_path(project), :class => 'btn btn-success'
+                %td= link_to "edit", edit_project_path(project), :class => 'btn btn-info'
+                %td= link_to "Destroy", project_path(project),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
+                %td
+                  = render :partial => 'close', :locals => {:id => project.id}
+                %td= link_to "view",view_project_path(project),:class =>"btn btn-danger"
+                %td= link_to "suspend",suspend_project_path(project),:class => 'btn btn-danger'
+                %td= link_to "abondoned",abondoned_project_path(project),:class => 'btn btn-danger'

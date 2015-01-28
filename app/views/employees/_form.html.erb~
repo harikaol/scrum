@@ -1,0 +1,20 @@
+
+<%=form_for(@employee)do|f| %>
+<%=f.label :name%>
+<%=f.text_field :name%><br>
+<%=f.label :phone_no%>
+<%=f.text_field :phone_no%><br>
+
+<%=f.label :date_of_joining%>
+<%=f.text_field :date_of_joining%><br>
+<%=f.label :designation%>
+<%=f.text_field :designation%><br>
+<%=f.label :date_of_birth%>
+<%=f.text_field :date_of_birth%><br>
+<%=f.label :email_id%>
+<%=f.text_field :email_id%><br>
+<%=f.label :qualification%>
+<%=f.text_field :qualification%><br>
+<%=f.submit 'Add' %>
+<%=f.submit 'create' %>
+<% end %>

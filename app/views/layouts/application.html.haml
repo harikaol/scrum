@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Employee Task Management System
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = render 'shared/header'
+  %body
+    .container
+      %body
+
+        %hr
+        %h6
+          - if logged_in?
+            .pull-right
+              = "Logged in as #{current_user.username}"
+              = link_to "(logout)", logout_path
+            = yield
+          - else
+            .pull-right
+              = link_to "(login)", login_path
+            = yield
+  = render 'shared/footer'

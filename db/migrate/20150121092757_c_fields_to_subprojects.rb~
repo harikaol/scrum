@@ -1,0 +1,6 @@
+class CFieldsToSubprojects < ActiveRecord::Migration
+  def change
+add_column :subprojects, :project_id, :string
+add_column :subprojects, :employee_id, :string
+  end
+end

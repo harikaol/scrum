@@ -1,0 +1,61 @@
+=form_for(@project) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name
+    .col-sm-3
+      =f.label :client
+    .col-sm-3
+      =f.text_field :client
+  .col-sm-12
+    .col-sm-3
+      =f.label :description
+    .col-sm-3
+      =f.text_field :description
+  .col-sm-12
+    .col-sm-3
+      =f.label :complexity
+    .col-sm-3
+      =f.text_field :complexity
+    .col-sm-3
+      =f.label :priority
+    .col-sm-3
+      =f.text_field :priority
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_received
+    .col-sm-3
+      =f.text_field :date_received
+    .col-sm-3
+      =f.label :category
+    .col-sm-3
+      =f.text_field :category
+  .col-sm-12
+    .col-sm-3
+      =f.label :volume
+    .col-sm-3
+      =f.text_field :volume
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      =f.text_field :primary_owner
+  .col-sm-12
+    .col-sm-3
+      =f.label :constraints
+    .col-sm-3
+      =f.text_field :constraints
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting
+    .col-sm-3
+      =f.label :expected_date_of_completion
+    .col-sm-3
+      =f.text_field :expected_date_of_completion
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'save'
+      =f.submit 'cancel'
+      =f.submit 'add_sub_projects'

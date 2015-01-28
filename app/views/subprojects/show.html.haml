@@ -1,0 +1,45 @@
+%h4
+  subproject
+  .col-sm-12
+    .col-sm-1
+      project id
+    .col-sm-1
+      project name
+    .col-sm-2
+      owner
+    .col-sm-2
+      subproject id
+    .col-sm-2
+      name
+    .col-sm-2
+      description
+    .col-sm-1
+      date of starting
+    .col-sm-1
+      status
+  .col-sm-12
+    .col-sm-3
+      number of tasks
+    .col-sm-3
+      number of tasks completed
+  .col-sm-12
+    .col-sm-1
+      = @subproject.project_id
+    .col-sm-1
+      = @subproject.project_name
+    .col-sm-2
+      = @subproject.owner
+      = @subproject.subproject_id
+    .col-sm-2
+      = @subproject.project_name
+    .col-sm-2
+      = @subproject.subproject_description
+    .col-sm-1
+      = @subproject.date_of_starting
+    .col-sm-1
+      = @subproject.status
+    .col-sm-12
+    .col-sm-2
+      = @subproject.number_of_tasks
+    .col-sm-2
+      = @subproject.number_of_tasks_completed

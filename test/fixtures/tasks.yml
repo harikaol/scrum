@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  employee_id: 1
+  subproject_id: 1
+  project_name: MyString
+  subproject_name: MyString
+  task_name: MyString
+  priority: MyString
+  status: MyString
+  owner: MyString
+  start_date: 1
+  end_date: 1
+  expected_number_of_days: MyString
+  actual_start_date: 1
+  expected_end_date: 1
+
+two:
+  project_id: 1
+  employee_id: 1
+  subproject_id: 1
+  project_name: MyString
+  subproject_name: MyString
+  task_name: MyString
+  priority: MyString
+  status: MyString
+  owner: MyString
+  start_date: 1
+  end_date: 1
+  expected_number_of_days: MyString
+  actual_start_date: 1
+  expected_end_date: 1

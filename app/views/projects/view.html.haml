@@ -1,0 +1,33 @@
+=form_for(@project) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :id
+    .col-sm-3
+      =f.text_field :id,:readonly => true
+    .col-sm-3
+      =f.label :status
+    .col-sm-3
+      =f.text_field :status,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :description
+    .col-sm-3
+      =f.text_field :description,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.label :date_of_starting
+    .col-sm-3
+      =f.text_field :date_of_starting,:readonly => true
+    .col-sm-3
+      =f.label :primary_owner
+    .col-sm-3
+      =f.text_field :primary_owner,:readonly => true
+  .col-sm-12
+    .col-sm-3
+      =f.submit 'close'
+      =f.submit 'activate'
