@@ -1,66 +1,61 @@
 =form_for(@project) do |f|
   .col-sm-12
     .col-sm-3
-      =f.label :id
-    .col-sm-3
-      =f.text_field :id
-  .col-sm-12
-    .col-sm-3
       =f.label :project_name
     .col-sm-3
-      =f.text_field :project_name
+      =f.text_field :project_name,:class =>"form-control"
     .col-sm-3
       =f.label :client
     .col-sm-3
-      =f.text_field :client
+      =f.text_field :client,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :description
     .col-sm-3
-      =f.text_field :description
+      =f.text_field :description,:class =>"form-control"
   .col-sm-12
     .col-sm-3
-      =f.label :complexity
+      =f.label :complexity,  :class =>'control-label '
     .col-sm-3
-      = f.select :complexity, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+      = f.select :complexity, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'},:class =>"form-control"
     .col-sm-3
       =f.label :priority
     .col-sm-3
-      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
+      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'},:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :date_received
     .col-sm-3
-      =f.text_field :date_received
+      =f.text_field :date_received,:class =>"form-control"
     .col-sm-3
       =f.label :category
     .col-sm-3
-      = f.select :category, options_for_select([['a'],['termination'],['absconding']]),{:include_blank => 'Select'}
+      = f.select :category, options_for_select([['a'],['termination'],['absconding']]),{:include_blank => 'Select'},:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :volume
     .col-sm-3
-      = f.select :volume, options_for_select([['very small'],['small'],['medium'],['high'],['very high']]),{:include_blank => 'Select'}
+      = f.select :volume, options_for_select([['very small'],['small'],['medium'],['high'],['very high']]),{:include_blank => 'Select'},:class =>"form-control"
     .col-sm-3
       =f.label :primary_owner
     .col-sm-3
-      = f.select :primary_owner, options_for_select([['a'],['b'],['c']]),{:include_blank => 'Select'}
+      = f.select :primary_owner, options_for_select([['a'],['b'],['c']]),{:include_blank => 'Select'},:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :constraints
     .col-sm-3
-      =f.text_field :constraints
+      =f.text_field :constraints,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :date_of_starting
     .col-sm-3
-      =f.text_field :date_of_starting
+      =f.text_field :date_of_starting,:class =>"form-control"
     .col-sm-3
       =f.label :expected_date_of_completion
     .col-sm-3
-      =f.text_field :expected_date_of_completion
+      =f.text_field :expected_date_of_completion,:class =>"form-control"
   .col-sm-12
     .col-sm-3
-      =f.submit 'save'
-      =f.submit 'cancel'
-      =f.submit 'add_sub_projects'
+      =f.submit 'save',:class => "btn btn-success"
+      =f.submit 'cancel',:class => "btn btn-danger"
+   

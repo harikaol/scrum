@@ -1,25 +1,34 @@
 =form_for(@project)do|f|
   .col-sm-12
     .col-sm-3
+    .col-sm-3
       =f.label :reason_for_suspending
     .col-sm-3
-      = f.select(:reason_for_suspending, options_for_select([['no longer'],['client induced'],['opening another project']]),{:include_blank => 'Select'})
+      = f.select :reason_for_suspending, options_for_select([['no longer'],['client induced'],['opening another project']]),{:include_blank => 'Select'},:class =>"form-control"
+    .col-sm-3
   .col-sm-12
+    .col-sm-3
     .col-sm-3
       =f.label :comments
     .col-sm-3
       %textarea{:name => "text"}
+    .col-sm-3
   .col-sm-12
+    .col-sm-3
     .col-sm-3
       =f.label :suspended_date
     .col-sm-3
-      =f.text_field :suspended_date
+      =f.text_field :suspended_date,:class =>"form-control"
+    .col-sm-3
   .col-sm-12
+    .col-sm-3
     .col-sm-3
       =f.label :trigger_date
     .col-sm-3
-      =f.text_field :trigger_date
-  .col-sm-12
+      =f.text_field :trigger_date,:class =>"form-control"
     .col-sm-3
+  .col-sm-12
+    %br
+    %center
       = f.hidden_field :status, :value => 'suspend'
-      = f.submit 'suspend'
+      = f.submit 'suspend',:class => "btn btn-primary"

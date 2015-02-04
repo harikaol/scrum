@@ -1,7 +1,7 @@
 %h1
   Employees
 .pull-right
-  = link_to "new",new_employee_path, :class => 'btn btn-primary'
+  = link_to "Add new",new_employee_path, :class => 'btn btn-primary'
 
 %table.table.table-condensed.table-hovered.table-striped.table-bordered
 
@@ -10,11 +10,9 @@
       %th id
       %th Name
       %th Phone no
-      %th Date of Joining
       %th Designation
-      %th Date of Birth
       %th Email Id
-      %th Qualification
+      %th status
       %th Image
       %th Show
       %th Edit
@@ -27,11 +25,9 @@
           %td= employee.id
           %td= employee.name
           %td= employee.phone_no
-          %td= employee.date_of_joining
           %td= employee.designation
-          %td= employee.date_of_birth
           %td= employee.email_id
-          %td= employee.qualification
+          %td= employee.status
           %td= image_tag employee.avatar, :size => '100', :class => 'img-circle'
           - if logged_in?
             %td= link_to "show",employee_path(employee), :class => 'btn btn-success'

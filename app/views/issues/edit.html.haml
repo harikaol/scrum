@@ -1,0 +1,44 @@
+  =form_for(@issue) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_id
+    .col-sm-3
+      =f.text_field :project_id,:class =>"form-control"
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      =f.text_field :project_name,:class =>"form-control"
+  .col-sm-12
+    .col-sm-3
+      =f.label :subproject_id
+    .col-sm-3
+      =f.text_field :subproject_id,:class =>"form-control"
+    .col-sm-3
+      =f.label :subproject_name
+    .col-sm-3
+      =f.text_field :subproject_name,:class =>"form-control"
+  .col-sm-12
+    .col-sm-3
+      =f.label :task_id
+    .col-sm-3
+      =f.text_field :task_id,:class =>"form-control"
+    .col-sm-3
+      =f.label :task_name
+    .col-sm-3
+      =f.text_field :task_name,:class =>"form-control"
+  .col-sm-12
+    .col-sm-3
+      =f.label :issue
+    .col-sm-3
+      %textarea{:name => "text"}
+    .col-sm-3
+      =f.label :resolution
+    .col-sm-3
+      %textarea{:name => "text"}
+  .col-sm-12
+    %br 
+    %center
+      =f.submit, 'mark as resolved',:class => "btn btn-danger"
+      =f.submit, 'cancel':class => "btn btn-danger"
+
+    

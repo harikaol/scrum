@@ -1,58 +1,87 @@
-=form_for(@task) do |f|
+%h4
+  task
   .col-sm-12
     .col-sm-3
-      =f.label :project_id
     .col-sm-3
-      =f.text_field :project_id,:readonly => true
+      project id
     .col-sm-3
-      =f.label :project_name
+      = @task.project_id
     .col-sm-3
-      =f.text_field :project_name,:readonly => true
   .col-sm-12
     .col-sm-3
-      =f.label :subproject_id
     .col-sm-3
-      =f.text_field :subproject_id,:readonly => true
+      project name
     .col-sm-3
-      =f.label :subproject_name
+      = @task.subproject.project.project_name
     .col-sm-3
-      =f.text_field :subproject_name,:readonly => true
   .col-sm-12
     .col-sm-3
-      =f.label :id
     .col-sm-3
-      =f.text_field :id
+      subproject id
     .col-sm-3
-      =f.label :status
+      = @task.subproject_id
     .col-sm-3
-      =f.text_field :status
   .col-sm-12
     .col-sm-3
-      =f.label :task_name
     .col-sm-3
-      =f.text_field :task_name
+      subproject name
     .col-sm-3
-      =f.label :owner
+      = @task.subproject.subproject_name
     .col-sm-3
-      =f.text_field :owner
   .col-sm-12
     .col-sm-3
-      =f.label :start_date
     .col-sm-3
-      =f.text_field :start_date
+      task id
     .col-sm-3
-      =f.label :end_date
+      = @task.id
     .col-sm-3
-      =f.text_field :end_date
   .col-sm-12
     .col-sm-3
-      =f.label :actual_start_date
     .col-sm-3
-      =f.text_field :actual_start_date
+      status
     .col-sm-3
-      =f.label :expected_end_date
+      = @task.status
     .col-sm-3
-      =f.text_field :expected_end_date
   .col-sm-12
     .col-sm-3
-      =f.submit 'done'
+    .col-sm-3
+      task name
+    .col-sm-3
+      = @task.task_name
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      owner
+    .col-sm-3
+      = @task.owner
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      start date
+    .col-sm-3
+      = @task.start_date
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      end date
+    .col-sm-3
+      = @task.end_date
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      actual start date
+    .col-sm-3
+      = @task.actual_start_date
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      expected end date
+    .col-sm-3
+      = @task.expected_end_date
+    .col-sm-3
+

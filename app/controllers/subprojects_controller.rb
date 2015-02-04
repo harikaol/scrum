@@ -1,6 +1,8 @@
 class SubprojectsController < ApplicationController
   def index
     @subprojects=Subproject.all
+    @projects =Project.all
+    @subproject=Subproject.new
   end
   def new
     @subproject=Subproject.new
@@ -8,6 +10,7 @@ class SubprojectsController < ApplicationController
   def create
     @subproject = Subproject.new(subproject_params)
     @subproject.project_id = params[:project_id]
+    # @subproject.project_name = @project.project_name
     if @subproject.save
       redirect_to projects_path
     else
@@ -16,6 +19,10 @@ class SubprojectsController < ApplicationController
   end
   def show
     @subproject=Subproject.find(params[:id])
+    @task=Task.new
+    @task.subproject_id = @subproject.id
+    @task.project_id = @subproject.project_id
+
   end
   def edit
     @subproject=Subproject.find(params[:id])
@@ -32,6 +39,6 @@ class SubprojectsController < ApplicationController
     @subproject=Subproject.find(params[:id])
   end
   def subproject_params
-    params.require(:subproject).permit(:subproject_name,:subproject_description,:primary_owner,:constraints,:date_of_starting,:expected_date_of_completion,:status,:project_id)
+    params.require(:subproject).permit(:subproject_name,:subproject_description,:primary_owner,:constraints,:date_of_starting,:expected_date_of_completion,:status,:project_id,:project_name)
   end
 end

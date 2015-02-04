@@ -32,6 +32,8 @@ class EmployeesController < ApplicationController
   end
   def home
   end
+  def contact
+  end
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy

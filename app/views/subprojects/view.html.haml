@@ -1,64 +1,137 @@
-=form_for(@subproject) do |f|
-  .col-sm-12
-    .col-sm-3
-      =f.label :project_id
-    .col-sm-3
-      =f.text_field :project_id,:readonly => true
-    .col-sm-3
-      =f.label :project_name
-    .col-sm-3
-      =f.text_field :project_name,:readonly => true
-  .col-sm-12
-    .col-sm-3
-      =f.label :id
-    .col-sm-3
-      =f.text_field :id,:readonly => true
-  .col-sm-12
-    .col-sm-3
-      =f.label :subproject_name
-    .col-sm-3
-      =f.text_field :subproject_name,:readonly => true
-    .col-sm-3
-      =f.label :subproject_description
-    .col-sm-3
-      =f.text_field :subproject_description,:readonly => true
-  .col-sm-12
-    .col-sm-3
-      =f.label :owner
-    .col-sm-3
-      =f.text_field :owner,:readonly => true
-  .col-sm-12
-    .col-sm-3
-      =f.label :date_of_starting
-    .col-sm-3
-      =f.text_field :date_of_starting,:readonly => true
-    .col-sm-3
-      =f.label :expected_date_of_completion
-    .col-sm-3
-      =f.text_field :expected_date_of_completion,:readonly => true
-  .col-sm-12
-    .col-sm-3
-      =f.label :number_of_tasks
-    .col-sm-3
-      =f.text_field :number_of_tasks,:readonly => true
-    .col-sm-3
-      =f.label :number_of_tasks_completed
-    .col-sm-3
-      =f.text_field :number_of_tasks_completed,:readonly => true
+%h4
+  subproject
   .col-sm-12
     .col-sm-3
     .col-sm-3
+      project id
     .col-sm-3
-      =f.label :number_of_tasks_in_progress
+      = @subproject.project_id
     .col-sm-3
-      =f.text_field :number_of_tasks_in_progress,:readonly => true
   .col-sm-12
     .col-sm-3
     .col-sm-3
+      project name
     .col-sm-3
-      =f.label :tasks_scrapped
+      = @subproject.project.project_name
     .col-sm-3
-      =f.text_field :tasks_scrapped,:readonly => true
   .col-sm-12
     .col-sm-3
-      =f.submit 'done'
+    .col-sm-3
+      Primary owner
+    .col-sm-3
+      = @subproject.owner
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      subproject id
+    .col-sm-3
+      = @subproject.id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      name
+    .col-sm-3
+      = @subproject.subproject_name
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      description
+    .col-sm-3
+      = @subproject.subproject_description
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      date of starting
+    .col-sm-3
+      = @subproject.date_of_starting
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      status
+    .col-sm-3
+      = @subproject.status
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      number of tasks
+    .col-sm-3
+      = @subproject.number_of_tasks
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      number of tasks completed
+    .col-sm-3
+      = @subproject.number_of_tasks_completed
+    .col-sm-3
+
+    
+-# =form_for(@subproject) do |f|
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :project_id
+-#     .col-sm-3
+-#       =f.text_field :project_id,:readonly => true
+-#     .col-sm-3
+-#       =f.label :project_name
+-#     .col-sm-3
+-#       =f.text_field :project_name,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :id
+-#     .col-sm-3
+-#       =f.text_field :id,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :subproject_name
+-#     .col-sm-3
+-#       =f.text_field :subproject_name,:readonly => true
+-#     .col-sm-3
+-#       =f.label :subproject_description
+-#     .col-sm-3
+-#       =f.text_field :subproject_description,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :owner
+-#     .col-sm-3
+-#       =f.text_field :owner,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :date_of_starting
+-#     .col-sm-3
+-#       =f.text_field :date_of_starting,:readonly => true
+-#     .col-sm-3
+-#       =f.label :expected_date_of_completion
+-#     .col-sm-3
+-#       =f.text_field :expected_date_of_completion,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.label :number_of_tasks
+-#     .col-sm-3
+-#       =f.text_field :number_of_tasks,:readonly => true
+-#     .col-sm-3
+-#       =f.label :number_of_tasks_completed
+-#     .col-sm-3
+-#       =f.text_field :number_of_tasks_completed,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#     .col-sm-3
+-#     .col-sm-3
+-#       =f.label :number_of_tasks_in_progress
+-#     .col-sm-3
+-#       =f.text_field :number_of_tasks_in_progress,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#     .col-sm-3
+-#     .col-sm-3
+-#       =f.label :tasks_scrapped
+-#     .col-sm-3
+-#       =f.text_field :tasks_scrapped,:readonly => true
+-#   .col-sm-12
+-#     .col-sm-3
+-#       =f.submit 'done'

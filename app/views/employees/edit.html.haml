@@ -3,43 +3,45 @@
     .col-sm-3
       =f.label :id
     .col-sm-3
-      =f.text_field :id,:readonly => true
+      =f.text_field :id,:readonly => true,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :name
     .col-sm-3
-      =f.text_field :name
+      =f.text_field :name,:class =>"form-control"
     .col-sm-3
       =f.label :date_of_birth
     .col-sm-3
-      =f.text_field :date_of_birth
+      =f.text_field :date_of_birth,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :phone_no
     .col-sm-3
-      =f.text_field :phone_no
+      =f.text_field :phone_no,:class =>"form-control"
     .col-sm-3
       =f.label :email_id
     .col-sm-3
-      =f.text_field :email_id
+      =f.text_field :email_id,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :date_of_joining
     .col-sm-3
-      =f.text_field :date_of_joining
+      =f.text_field :date_of_joining,:class =>"form-control"
     .col-sm-3
       =f.label :qualification
     .col-sm-3
-      =f.text_field :qualification
+      =f.text_field :qualification,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :designation
     .col-sm-3
-      =f.text_field :designation
+      =f.text_field :designation,:class =>"form-control"
     .col-sm-3
       =f.label "Upload Photo"
     .col-sm-3
       =f.file_field :avatar
-    .col-sm-3
-      =f.submit 'Add'
-      =f.submit 'cancel'
+  .col-sm-12
+    %br
+    %center
+      =f.submit 'Add',:class => "btn btn-success"
+      =f.submit 'cancel',:class => "btn btn-danger"

@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
+  get 'password_resets/create'
+
+  get 'password_resets/edit'
+
+  get 'password_resets/update'
+
   resources :employees do
     member do
       get 'terminate'
+    end
+    collection do
+      get 'contact'
     end
   end
   root 'employees#home'
   resources :projects do
     member do
-      put 'close'
+      get 'close'
       get 'view'
       get 'abondoned'
       get 'suspend'
@@ -25,14 +34,23 @@ Rails.application.routes.draw do
   end
   resources :employees
   resources :projects do
-  resources :subprojects
+  resources :subprojects 
   resources :tasks
   end
+resources :subprojects do
+resources :tasks 
+end
+resources :projects do
+resources :subprojects do
+resources :tasks
+end
+end
   resources :users
   resources :user_sessions, only: [ :new, :create, :destroy ]
 
   get 'login'  => 'user_sessions#new'
   get 'logout' => 'user_sessions#destroy'
+  resources :password_resets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

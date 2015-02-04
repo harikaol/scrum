@@ -1,44 +1,45 @@
 =form_for(@employee)do|f|
+  = image_tag @employee.avatar,:size => '100'
   .col-sm-12
     .col-sm-3
       =f.label :id
     .col-sm-3
-      =f.text_field :id,:readonly => true
+      =f.text_field :id,:readonly => true,:class =>"form-control"
     .col-sm-3
       =f.label :name
     .col-sm-3
-      =f.text_field :name,:readonly => true
+      =f.text_field :name,:readonly => true,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :phone_no
     .col-sm-3
-      =f.text_field :phone_no,:readonly => true
+      =f.text_field :phone_no,:readonly => true,:class =>"form-control"
     .col-sm-3
       =f.label :email_id
     .col-sm-3
-      =f.text_field :email_id,:readonly => true
+      =f.text_field :email_id,:readonly => true,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :date_of_joining
     .col-sm-3
-      =f.text_field :date_of_joining,:readonly => true
+      =f.text_field :date_of_joining,:readonly => true,:class =>"form-control"
     .col-sm-3
       =f.label :designation
     .col-sm-3
-      =f.text_field :designation,:readonly => true
+      =f.text_field :designation,:readonly => true,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :date_of_leaving
     .col-sm-3
-      =f.text_field :date_of_leaving, :class=> 'date-picker'
+      =f.text_field :date_of_leaving, :class=> 'date-picker',:class =>"form-control"
     .col-sm-3
       =f.label :reason
     .col-sm-3
       = f.select(:reason, options_for_select([['resignation'],['termination'],['absconding']]),{:include_blank => 'Select'})
   .col-sm-12
-    .col-sm-3
-      = f.hidden_field :status, :value => 'Terminated'
-      =f.submit 'save'
-      =f.submit 'cancel'
-    .col-sm-3
-      = image_tag @employee.avatar,:size => '100'
+    %br
+    %center
+      = f.hidden_field :status, :value => 'Terminated',:class =>"form-control"
+      =f.submit 'save',:class => "btn btn-success"
+      =f.submit 'cancel',:class => "btn btn-danger"
+    

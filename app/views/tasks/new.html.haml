@@ -3,41 +3,41 @@
     .col-sm-3
       =f.label :project_id
     .col-sm-3
-      =f.text_field :project_id
+      =f.text_field :project_id,:class =>"form-control"
     .col-sm-3
       =f.label :project_name
     .col-sm-3
-      =f.text_field :project_name
+      =f.text_field :project_name,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :subproject_id
     .col-sm-3
-      =f.text_field :subproject_id
+      =f.text_field :subproject_id,:class =>"form-control"
     .col-sm-3
       =f.label :subproject_name
     .col-sm-3
-      =f.text_field :subproject_name
+      =f.text_field :subproject_name,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :id
     .col-sm-3
-      =f.text_field :id
-  .col-sm-12
+      =f.text_field :id,:class =>"form-control"
     .col-sm-3
       =f.label :task_name
     .col-sm-3
-      =f.text_field :task_name
+      =f.text_field :task_name,:class =>"form-control"
   .col-sm-12
     .col-sm-3
       =f.label :priority
     .col-sm-3
-      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'}
-  .col-sm-12
+      = f.select :priority, options_for_select([['low'],['medium'],['high']]),{:include_blank => 'Select'},:class =>"form-control"
     .col-sm-3
       =f.label :expected_number_of_days
     .col-sm-3
-      =f.text_field :expected_number_of_days
+      =f.text_field :expected_number_of_days,:class =>"form-control"
   .col-sm-12
-    .col-sm-3
-      =f.submit 'done'
-      =f.submit 'cancel'
+    %br 
+    %center
+      =f.submit 'done',:class => "btn btn-success"
+      =f.submit 'cancel',:class => "btn btn-danger"
+

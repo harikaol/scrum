@@ -1,38 +1,57 @@
 %h4
-  Employee
-  = @employee.name
-.col-sm-12
-  .col-sm-1
-    Id
-  .col-sm-1
-    Phone no
-  .col-sm-2
-    Date of Joining
-  .col-sm-2
-    Designation
-  .col-sm-2
-    Date of Birth
-  .col-sm-2
-    Email ID
-  .col-sm-1
-    Qualification
-  .col-sm-1
-    avatar
-
-.col-sm-12
-  .col-sm-1
-    = @employee.id
-  .col-sm-1
-    = @employee.phone_no
-  .col-sm-2
-    = @employee.date_of_joining
-  .col-sm-2
-    = @employee.designation
-  .col-sm-2
-    = @employee.date_of_birth
-  .col-sm-2
-    = @employee.email_id
-  .col-sm-1
-    = @employee.qualification
-  .col-sm-1
+  %table.table.table-condensed.table-hovered.table-striped.table-bordered
+    Employee 
+    %b
+      = @employee.name
     = image_tag @employee.avatar,:size =>'100'
+.row
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      id
+    .col-sm-3
+      = @employee.id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Phone_no
+    .col-sm-3
+      = @employee.phone_no
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Date of Joining
+    .col-sm-3
+      = @employee.date_of_joining
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Designation
+    .col-sm-3
+      = @employee.designation
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Date of Birth
+    .col-sm-3
+      = @employee.date_of_birth
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Email ID
+    .col-sm-3
+      = @employee.email_id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      Qualification
+    .col-sm-3
+      = @employee.qualification
+    .col-sm-3
+

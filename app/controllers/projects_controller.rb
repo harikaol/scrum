@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
 
+
     @project.status = 'Created'
     if @project.save
       redirect_to projects_path
@@ -22,6 +23,8 @@ class ProjectsController < ApplicationController
     @project= Project.find(params[:id])
     @subproject = Subproject.new
     @subproject.project_id = @project.id
+
+    
   end
   def edit
     @project=Project.find(params[:id])
