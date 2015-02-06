@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users # , controllers: { sessions: "users/sessions" }
   get 'password_resets/create'
 
   get 'password_resets/edit'
@@ -34,23 +35,30 @@ Rails.application.routes.draw do
   end
   resources :employees
   resources :projects do
-  resources :subprojects 
-  resources :tasks
+    resources :subprojects 
+    resources :tasks
   end
-resources :subprojects do
-resources :tasks 
-end
-resources :projects do
-resources :subprojects do
-resources :tasks
-end
-end
-  resources :users
-  resources :user_sessions, only: [ :new, :create, :destroy ]
-
-  get 'login'  => 'user_sessions#new'
-  get 'logout' => 'user_sessions#destroy'
-  resources :password_resets
+  resources :subprojects do
+    resources :tasks 
+  end
+  resources :projects do
+    resources :subprojects do
+      resources :tasks
+    end
+  end
+  resources :projects do
+    resources :subprojects do
+      resources :tasks do
+        resources :issues
+      end
+    end
+  end
+  resources :issues do
+    member do
+      get 'view'
+    end
+  end
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

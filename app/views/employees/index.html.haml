@@ -1,7 +1,7 @@
 %h1
   Employees
 .pull-right
-  = link_to "Add new",new_employee_path, :class => 'btn btn-primary'
+  = link_to "Add new",new_employee_path, :class => 'btn btn-warning'
 
 %table.table.table-condensed.table-hovered.table-striped.table-bordered
 
@@ -16,8 +16,9 @@
       %th Image
       %th Show
       %th Edit
-      %th Destroy
       %th Terminate
+      %th Destroy
+     
 
     %tbody
       - @employees.each do|employee|
@@ -29,8 +30,8 @@
           %td= employee.email_id
           %td= employee.status
           %td= image_tag employee.avatar, :size => '100', :class => 'img-circle'
-          - if logged_in?
-            %td= link_to "show",employee_path(employee), :class => 'btn btn-success'
-            %td= link_to "edit", edit_employee_path(employee), :class => 'btn btn-info'
-            %td= link_to "Destroy", employee_path(employee),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
-            %td=link_to "terminate",terminate_employee_path(employee), :class => 'btn btn-primary'
+          %td= link_to "show",employee_path(employee), :class => 'btn btn-primary'
+          %td= link_to "edit", edit_employee_path(employee), :class => 'btn btn-primary'
+          %td=link_to "terminate",terminate_employee_path(employee), :class => 'btn btn-primary'
+          %td= link_to "Destroy", employee_path(employee),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
+   

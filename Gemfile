@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'jquery-ui-rails', '~> 4.2.1'
-gem 'delayed_job_active_record'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -11,9 +11,10 @@ gem 'sass-rails', '~> 5.0.1'
 gem 'bootstrap-sass', '~> 3.3.1.0'
 gem 'bootstrap', '~> 0.0.1'
 gem 'rename'
-gem 'sorcery'
+gem 'devise'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+
 # Use SCSS for stylesheets
 
 # Use Uglifier as compressor for JavaScript assets

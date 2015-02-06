@@ -1,7 +1,8 @@
 class Project < ActiveRecord::Base
-has_one :employee
-has_many :subprojects
-has_many :tasks
+  has_one :employee
+  has_many :subprojects
+  has_many :tasks
+  has_many :issues
   def self.get_id
     if Project.exists?(&:id)
       id = Project.maximum(:id)

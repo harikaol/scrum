@@ -2,19 +2,19 @@
   Subprojects
 %h4
   .pull-right
-    = link_to "Add new",new_subproject_path, :class => 'btn btn-primary'
+    -# = link_to "Add new",new_subproject_path, :class => 'btn btn-primary'
   .row
     .col-sm-12
     %table.table.table-condensed.table-hovered.table-striped.table-bordered
       %thead
         %tr
-          %th project id
-          %th project Name
-          %th subproject id
-          %th subproject description
-          %th primary owner
-          %th status
-          %th view
+          %th Project id
+          %th Project Name
+          %th Subproject id
+          %th Subproject Description
+          %th Primary Owner
+          %th Status
+          %th View
           %th Edit
           %th Add Tasks
       %tbody
@@ -27,6 +27,6 @@
             %td= subproject.primary_owner
             %td= subproject.status
             %td= link_to "view",view_subproject_path(subproject),:class => 'btn btn-primary'
-            %td= link_to "edit",edit_subproject_path(subproject),:class => 'btn btn-info'
+            %td= link_to "edit",edit_subproject_path(subproject),:class => 'btn btn-primary'
             %td= link_to "Add Tasks",subproject_path(subproject),:class => 'btn btn-success'
             

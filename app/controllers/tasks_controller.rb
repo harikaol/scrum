@@ -7,9 +7,7 @@ class TasksController < ApplicationController
     end
     def create
       @task = Task.new(task_params)
-      @task.project_id = params[:project_id]
       @task.subproject_id=params[:subproject_id]
-      # @task.subproject_name = @subproject.subproject_name
       if @task.save
         redirect_to subprojects_path
       else
@@ -18,6 +16,10 @@ class TasksController < ApplicationController
     end
     def show
       @task=Task.find(params[:id])
+      @issue = Issue.new
+      @issue.task_id = @task.id
+      @issue.subproject_id = @task.subproject.id
+      @issue.project_id = @task.subproject.project.id
     end
     def edit
       @task=Task.find(params[:id])
@@ -34,7 +36,7 @@ class TasksController < ApplicationController
       @task=Task.find(params[:id])
     end
     def task_params
-      params.require(:task).permit(:task_name,:priority,:owner,:status,:start_date,:end_date,:actual_start_date,:expected_end_date,:expected_number_of_days)
+      params.require(:task).permit(:task_name,:priority,:owner,:status,:start_date,:end_date,:actual_start_date,:expected_end_date,:expected_number_of_days, :project_id)
     end
   end
 

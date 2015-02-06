@@ -3,7 +3,7 @@
     .col-sm-3
       =f.label :project_id
     .col-sm-3
-      =f.text_field :project_id,:class =>"form-control"
+      = @subproject.project.id
     .col-sm-3
       =f.label :project_name
     .col-sm-3
@@ -39,5 +39,6 @@
     %br
     %center
       = f.hidden_field :project_id, :value => @task.subproject.project_id
+      = @task.subproject.project_id
       = f.submit 'done',:class => "btn btn-success"
       = f.submit 'cancel',:class => "btn btn-danger"

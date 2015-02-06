@@ -1,7 +1,7 @@
 %h1
   Projects
 .pull-right
-  = link_to "Add new",new_project_path, :class => 'btn btn-primary'
+  = link_to "Add new",new_project_path, :class => 'btn btn-warning'
 
   %table.table.table-condensed.table-hovered.table-striped.table-bordered
 %br
@@ -26,17 +26,17 @@
         %tr
           %th id
           %th Project Name
-          %th description
-          %th date received
-          %th priority
-          %th status
+          %th Description
+          %th Date Received
+          %th Priority
+          %th Status
           -# %th number of sub project
           %th View
-          %th edit
-          %th destroy
-          %th close
-          %th suspend
-          %th abondoned
+          %th Edit
+          %th Close
+          %th Suspend
+          %th Abondoned
+          %th Destroy
           %th Add Sub Projects
           %tbody
             - @projects.each do|project|
@@ -47,10 +47,10 @@
                 %td= project.date_received 
                 %td= project.priority
                 %td= project.status
-                %td= link_to "view",view_project_path(project),:class =>"btn btn-danger"
-                %td= link_to "edit", edit_project_path(project), :class => 'btn btn-info'
+                %td= link_to "View",view_project_path(project),:class =>"btn btn-primary"
+                %td= link_to "Edit", edit_project_path(project), :class => 'btn btn-primary'
+                %td=link_to "Close",close_project_path(project),:class => "btn btn-primary"
+                %td= link_to "Suspend",suspend_project_path(project),:class => 'btn btn-primary'
+                %td= link_to "Abondoned",abondoned_project_path(project),:class => 'btn btn-primary'
                 %td= link_to "Destroy", project_path(project),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
-                %td=link_to "close",close_project_path(project),:class => "btn btn-info"
-                %td= link_to "suspend",suspend_project_path(project),:class => 'btn btn-danger'
-                %td= link_to "abondoned",abondoned_project_path(project),:class => 'btn btn-danger'
                 %td= link_to "Add sub Project",project_path(project), :class => 'btn btn-success'

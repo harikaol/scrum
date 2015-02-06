@@ -3,6 +3,7 @@ class Subproject < ActiveRecord::Base
   has_many :tasks
   # has_many :subprojects
   has_one :employee
+  has_many :issues
   def self.get_id
     if Subproject.exists?(&:id)
       id = Subproject.maximum(:id)

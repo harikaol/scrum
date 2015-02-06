@@ -1,35 +1,29 @@
 %h1
-  tasks
+  Issues
   .pull-right
-    = link_to " Add new",new_task_path, :class => 'btn btn-primary'
+    = link_to " Add new",new_issue_path, :class => 'btn btn-warning'
 %h4
   .row
     .col-sm-12
       %table.table.table-condensed.table-hovered.table-striped.table-bordered
         %thead
           %tr
-            %th project id
-            %th project Name
-            %th subproject id
-            %th subproject name
-            %th owner
-            %th status
-            %th task id
-            %th task name
-            %th view
-            %th edit
-            %th show
+            %th Project id
+            %th Project Name
+            %th Subproject id
+            %th Subproject Name
+            %th Task id
+            %th Task Name
+            %th Edit
+            %th View
         %tbody
-          - @tasks.each do|task|
+          - @issues.each do|issue|
             %tr
-              %td= task.subproject.project_id
-              %td= task.subproject.project.project_name
-              %td= task.subproject_id
-              %td= task.subproject.subproject_name
-              %td= task.owner
-              %td= task.status
-              %td= task.id
-              %td= task.task_name
-              %td= link_to "view",view_task_path(task),:class => 'btn btn-primary'
-              %td= link_to "edit",edit_task_path(task),:class => 'btn btn-info'
-              %td= link_to "show",task_path(task),:class => 'btn btn-primary'
+              %td= issue.task.subproject.project.id
+              %td= issue.task.subproject.project.project_name
+              %td= issue.task.subproject.id
+              %td= issue.task.subproject.subproject_name
+              %td= issue.task_id
+              %td= issue.task.task_name
+              %td= link_to "edit",edit_issue_path(issue),:class => 'btn btn-primary'
+              %td= link_to "view",view_issue_path(issue),:class => 'btn btn-primary'

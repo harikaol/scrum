@@ -1,44 +1,49 @@
-  =form_for(@issue) do |f|
+=form_for(@issue) do |f|
   .col-sm-12
+    %br
     .col-sm-3
-      =f.label :project_id
+      project_id
     .col-sm-3
-      =f.text_field :project_id,:class =>"form-control"
+      = @issue.task.subproject.project_id
     .col-sm-3
-      =f.label :project_name
+      project_name
     .col-sm-3
-      =f.text_field :project_name,:class =>"form-control"
+      = @issue.task.subproject.project.project_name 
   .col-sm-12
+    %br
     .col-sm-3
-      =f.label :subproject_id
+      subproject_id
     .col-sm-3
-      =f.text_field :subproject_id,:class =>"form-control"
+      = @issue.task.subproject_id 
     .col-sm-3
-      =f.label :subproject_name
+      subproject_name
     .col-sm-3
-      =f.text_field :subproject_name,:class =>"form-control"
+      = @issue.task.subproject.subproject_name
   .col-sm-12
+    %br
     .col-sm-3
-      =f.label :task_id
+      task_id
     .col-sm-3
-      =f.text_field :task_id,:class =>"form-control"
+      = @issue.task_id
     .col-sm-3
-      =f.label :task_name
+      task_name
     .col-sm-3
-      =f.text_field :task_name,:class =>"form-control"
+      = @issue.task.task_name
   .col-sm-12
+    %br
     .col-sm-3
-      =f.label :issue
+      issue
     .col-sm-3
-      %textarea{:name => "text"}
+      = f.text_area :issue_description
     .col-sm-3
-      =f.label :resolution
+      resolution
     .col-sm-3
-      %textarea{:name => "text"}
+      = f.text_area :resolution
   .col-sm-12
     %br 
     %center
-      =f.submit, 'mark as resolved',:class => "btn btn-danger"
-      =f.submit, 'cancel':class => "btn btn-danger"
+      =f.submit 'mark as resolved',:class => "btn btn-danger"
+      =f.submit 'cancel',:class => "btn btn-danger"
 
     
+

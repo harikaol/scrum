@@ -21,7 +21,7 @@ class SubprojectsController < ApplicationController
     @subproject=Subproject.find(params[:id])
     @task=Task.new
     @task.subproject_id = @subproject.id
-    @task.project_id = @subproject.project_id
+    @task.project_id = @subproject.project.id 
 
   end
   def edit

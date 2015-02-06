@@ -1,0 +1,62 @@
+%h4
+  Issue Description:
+  %b
+    = @issue.issue_description
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      project id
+    .col-sm-3
+      = @issue.task.project_id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      project name
+    .col-sm-3
+      = @issue.task.subproject.project.project_name
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      subproject id
+    .col-sm-3
+      = @issue.task.subproject_id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      subproject name
+    .col-sm-3
+      = @issue.task.subproject.subproject_name
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      task id
+    .col-sm-3
+      = @issue.task.id
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      task name
+    .col-sm-3
+      = @issue.task_name
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      status
+    .col-sm-3
+      = @issue.task.status
+    .col-sm-3
+  .col-sm-12
+    .col-sm-3
+    .col-sm-3
+      resolution
+    .col-sm-3
+      = @issue.resolution
+    .col-sm-3
+
+
