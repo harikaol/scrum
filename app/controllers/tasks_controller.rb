@@ -8,6 +8,8 @@ class TasksController < ApplicationController
     def create
       @task = Task.new(task_params)
       @task.subproject_id=params[:subproject_id]
+      @task.status= "Pending"
+  
       if @task.save
         redirect_to subprojects_path
       else
@@ -32,8 +34,22 @@ class TasksController < ApplicationController
         render "edit"
       end
     end
+    
     def view
       @task=Task.find(params[:id])
+    end
+    
+    def status_change
+      p "1111111111111"
+      @task =Task.find(params[:id])
+      @task.status= "taken"
+      # @task.status=params[:status =>  "completed"]
+
+      if @task.update(task_params)
+        redirect_to tasks_path
+      else
+        render "edit"
+      end
     end
     def task_params
       params.require(:task).permit(:task_name,:priority,:owner,:status,:start_date,:end_date,:actual_start_date,:expected_end_date,:expected_number_of_days, :project_id)

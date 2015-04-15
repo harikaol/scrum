@@ -1,14 +1,34 @@
 %h1
   Employees
 .pull-right
+  -# - if current_userle != 'employee'
+    / if seeker is logged in show button "Grab it"
+    - if user_signed_in?
+      .grabit.alignright
+      %small want to work on this?
+      if seeker i
+  -# - if user.role == "admin"
+  -#   if(session["Usertype"]=="admin")
+  -#   {
+  -#   btnAdd new.Visible=true;
+    
+  -#   }
+  -#   else
+  -#   {
+    
+  -#   btnAdd new.Visible=false;
+  -#   }
+  -# = link_to "New User" , new_user_path if can? :create, employee 
+ 
+- if  current_user.role.name == 'admin'
   = link_to "Add new",new_employee_path, :class => 'btn btn-warning'
-
+    
 %table.table.table-condensed.table-hovered.table-striped.table-bordered
-
+  
   %thead
     %tr
       %th id
-      %th Name
+      %th name
       %th Phone no
       %th Designation
       %th Email Id
@@ -34,4 +54,4 @@
           %td= link_to "edit", edit_employee_path(employee), :class => 'btn btn-primary'
           %td=link_to "terminate",terminate_employee_path(employee), :class => 'btn btn-primary'
           %td= link_to "Destroy", employee_path(employee),  :class => "btn btn-danger", :data=> {:confirm => "Are you sure?", method: :delete}, :title => "Delete"
-   
+             

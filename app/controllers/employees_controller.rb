@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+ 
   def index
     @employees=Employee.application_forms
   end

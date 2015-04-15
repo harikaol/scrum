@@ -3,6 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :project
   has_one :employee
   has_many :issues
+  belongs_to :project_detail
   def self.get_id
     if Task.exists?(&:id)
       id = Task.maximum(:id)

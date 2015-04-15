@@ -1,0 +1,41 @@
+=form_for(@issue) do |f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :project_id
+    .col-sm-3
+      = @task.subproject.project_id
+    .col-sm-3
+      =f.label :project_name
+    .col-sm-3
+      = @task.subproject.project.project_name
+  .col-sm-12
+    .col-sm-3
+      =f.label :subproject_id
+    .col-sm-3
+      = @task.subproject_id
+    .col-sm-3
+      =f.label :subproject_name
+    .col-sm-3
+      = @task.subproject.subproject_name
+  .col-sm-12
+    .col-sm-3
+      =f.label :id
+    .col-sm-3
+      = @task.id
+    .col-sm-3
+      =f.label :task_name
+    .col-sm-3
+      = @task.task_name
+  .col-sm-12
+    .col-sm-3
+      =f.label :description
+    .col-sm-3
+      =f.text_area :issue_description
+  .col-sm-12
+    %br 
+    %center
+      = f.hidden_field :project_id, :value => @task.subproject.project.id
+      = f.hidden_field :subproject_id, :value => @task.subproject.id
+      = f.hidden_field :task_id, :value => @task.id
+      =f.submit :class => "btn btn-danger"
+    

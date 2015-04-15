@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
   get 'password_resets/update'
-
+  # namespace :admin do
+  #   constraints subdomain: 'admin' do
+  #     resources :employees
+  #   end
+  # end
+  # authenticate :user do
+  #   scope "/admin" do
+  #     resources :employees, only: [:new, :create, :edit, :update, :destroy]
+  #   end
+  # end
+  # resources :employees, only: [:index, :show]
   resources :employees do
     member do
       get 'terminate'
@@ -31,8 +41,20 @@ Rails.application.routes.draw do
   resources :tasks do
     member do
       get 'view'
+      get 'status_change'
     end
   end
+  resources :employees do
+    resources :projects do
+      resources :subprojects do
+        resources :tasks do
+          resources :project_details
+        end
+      end
+    end
+  end
+  resources :project_details
+ 
   resources :employees
   resources :projects do
     resources :subprojects 

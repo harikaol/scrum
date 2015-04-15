@@ -1,0 +1,15 @@
+=form_for(@project)do|f|
+  .col-sm-12
+    .col-sm-3
+      =f.label :closing_comments
+    .col-sm-3
+      %textarea{:name => "text"}
+  .col-sm-12
+    .col-sm-3
+      =f.label :closing_date
+    .col-sm-3
+      =f.text_field :closing_date,:class =>"form-control"
+  .col-sm-12
+    .col-sm-3
+      = f.hidden_field :status, :value => 'closed'
+      =f.submit 'close',:class => "btn btn-danger"

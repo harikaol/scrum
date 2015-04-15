@@ -14,6 +14,8 @@ gem 'rename'
 gem 'devise'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem "cancan"
+gem 'cancancan', '~> 1.9'
 
 # Use SCSS for stylesheets
 

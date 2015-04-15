@@ -1,0 +1,35 @@
+%h1
+  
+  .pull-right
+    -#  = link_to " Add new",new_task_path, :class => 'btn btn-primary'
+  %h4
+  .row
+    .col-sm-12
+      %table.table.table-condensed.table-hovered.table-striped.table-bordered
+        %thead
+          %tr
+            %th Project id
+            %th Project Name
+            %th Subproject id
+            %th Subproject Name
+            %th Task id
+            %th Task Name
+            %th add
+           
+         
+        %tbody
+          - @tasks.each do|task|
+            %tr
+              %td= task.subproject.project.id
+              %td= task.subproject.project.project_name
+              %td= task.subproject_id
+              %td= task.subproject.subproject_name
+              %td= task.id
+              %td= task.task_name
+              -if task.status == 'pending'
+                %td= link_to "Pick",  status_change_task_path(task),  :class => "btn btn-primary"
+              - elsif task.status == 'Taken'
+                %td= link_to "Picked",  status_change_task_path(task),  :class => "btn btn-danger"
+              - else task.status == 'Completed'
+                %td= link_to "Completed", status_change_task_path(task)  ,  :class => "btn btn-success" 
+               
